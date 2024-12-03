@@ -1,0 +1,68 @@
+{
+    "dataset": "PSI2.0",
+    "task_name": "ped_intent",
+    "video_splits": "/home/dydy/proj_idc8208/dataset/PSI2.0_TrainVal/splits/PSI2_split.json",
+    "dataset_root_path": "/home/dydy/proj_idc8208/dataset/",
+    "database_path": "/home/dydy/proj_idc8208/dataset/",
+    "database_file": "intent_database_train.pkl",
+    "fps": 30,
+    "seq_overlap_rate": 0.9,
+    "test_seq_overlap_rate": 1,
+    "intent_num": 2,
+    "intent_type": "mean",
+    "predict_length": 1,
+    "max_track_size": 16,
+    "crop_mode": "enlarge",
+    "balance_data": false,
+    "normalize_bbox": null,
+    "image_shape": [
+        1280,
+        720
+    ],
+    "load_image": false,
+    "backbone": null,
+    "freeze_backbone": false,
+    "intent_model": true,
+    "traj_model": false,
+    "model_configs": {},
+    "checkpoint_path": "./ckpts/ped_intent/PSI2.0/transformer_int_bbox/20241128172443",
+    "resume": "",
+    "loss_weights": {
+        "loss_intent": 1.0,
+        "loss_traj": 0.0,
+        "loss_driving": 0.0
+    },
+    "intent_loss": [
+        "bce"
+    ],
+    "ignore_uncertain": false,
+    "intent_positive_weight": 0.5,
+    "traj_loss": [
+        "mse"
+    ],
+    "val_freq": 1,
+    "test_freq": 1,
+    "model_name": "transformer_int_bbox",
+    "input_dim": 4,
+    "hidden_dim": 128,
+    "num_layers": 2,
+    "nhead": 8,
+    "dropout": 0.1,
+    "epochs": 50,
+    "batch_size": 128,
+    "lr": 1e-05,
+    "weight_decay": 1e-05,
+    "lr_step": 10,
+    "lr_gamma": 0.1,
+    "device": "cuda:0",
+    "observe_length": 15,
+    "print_freq": 10,
+    "fine_tune": false,
+    "class_weights": [
+        9,
+        0.25
+    ],
+    "focal_alpha": 2.0,
+    "focal_gamma": 3.0,
+    "intent_disagreement": 1
+}
